@@ -8,6 +8,10 @@
 *.gch
 *.pch
 
+# VS Database
+*.pdb
+*.sdf
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
