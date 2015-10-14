@@ -1,1 +1,1 @@
-for /r "Release" %%a in (*.exe) do start "" "%%~fa"
+for /r "Release" %%a in (*.exe) do "%%~fa"
