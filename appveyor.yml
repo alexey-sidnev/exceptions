@@ -4,4 +4,4 @@ build:
   project: exceptions.sln
   verbosity: minimal
 on_success:
-- cmd: for /r "Release" %%a in (*.exe) do start "" "%%~fa"
+- cmd: run_all_release.bat
