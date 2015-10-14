@@ -1,0 +1,2 @@
+# exceptions
+Exceptions exercise (C++)
