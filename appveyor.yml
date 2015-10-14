@@ -3,3 +3,5 @@ configuration: Release
 build:
   project: exceptions.sln
   verbosity: minimal
+on_finish:
+- cmd: Release/exceptions.exe
