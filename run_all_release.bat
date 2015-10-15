@@ -1,4 +1,4 @@
-for /r "." %%a in (*.exe) do (
+for /r "Release" %%a in (*.exe) do (
   echo "%%~fa"
-  start /WAIT /B "%%~fa"
+  call "%%~fa"
 )
