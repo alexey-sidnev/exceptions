@@ -1,1 +1,4 @@
-for /r "Release" %%a in (*.exe) do "%%~fa"
+for /r "." %%a in (*.exe) do (
+  echo "%%~fa"
+  "%%~fa"
+)
