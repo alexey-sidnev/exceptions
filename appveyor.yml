@@ -1,7 +1,9 @@
 version: 1.0.{build}
 configuration: Release
 build:
-  project: exceptions.sln
+  project: build_all.sln
   verbosity: minimal
+before_build:
+- "python create_build_solution.py"
 on_success:
 - cmd: run_all_release.bat
