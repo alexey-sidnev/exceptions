@@ -4,7 +4,8 @@ build:
   project: build_all.sln
   verbosity: minimal
 before_build:
-- "python utils\\create_build_solution.py"
-- cmd: copy utils\\build_all.sln build_all.sln
+- cmd: cd utils
+- "python create_build_solution.py"
+- cmd: copy build_all.sln ..\\build_all.sln
 on_success:
 - cmd: utils\\run_all_release.bat
