@@ -3,5 +3,7 @@ configuration: Release
 build:
   project: exceptions.sln
   verbosity: minimal
+before_build:
+- "python --version"
 on_success:
 - cmd: run_all_release.bat
