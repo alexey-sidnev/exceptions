@@ -36,16 +36,18 @@ for root, dirnames, filenames in os.walk('.'):
       vcxproj_file = open(new_path, 'w')
       vcxproj_file.write(re.sub(projectname_pattern, '<ProjectName>'+new_projectname+'</ProjectName>', vcxproj).replace(old_guid, new_guid))
       vcxproj_file.close()
-      print 'Project: %s.' % new_path
+      print 'Project: %s' % new_path
 
 projects_string = ''
 for i in range(0, len(vcxproj_paths)):
   unique_guid = str(uuid.uuid4()).upper()
   projects_string += project_entry.replace('UNIQUE_GUID', unique_guid).replace('PROJECT_NAME', vcxproj_names[i]).replace('VCXPROJ_PATH', vcxproj_paths[i]).replace('PROJECT_GUID', vcxproj_guids[i])
+projects_string = projects_string[:-1]
 
 build_configuration_string = ''
 for i in range(0, len(vcxproj_paths)):
   build_configuration_string += build_configuration.replace('PROJECT_GUID', vcxproj_guids[i])
+build_configuration_string = build_configuration_string[:-1]
 
 sln_in = open('template.sln', 'r')
 template_sln = sln_in.read()
