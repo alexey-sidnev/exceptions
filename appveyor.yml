@@ -4,10 +4,6 @@ build:
   project: build_all.sln
   verbosity: minimal
 before_build:
-<<<<<<< HEAD
 - "python create_build_solution.py"
-=======
-- "python --version"
->>>>>>> e05c3d4f27aba9435da4cdae3406cbe2aee6ce46
 on_success:
 - cmd: run_all_release.bat
