@@ -5,6 +5,6 @@ build:
   verbosity: minimal
 before_build:
 - "python utils\create_build_solution.py"
-- cmd: "copy utils\build_all.sln build_all.sln"
+- cmd: copy utils\build_all.sln build_all.sln
 on_success:
 - cmd: utils\run_all_release.bat
