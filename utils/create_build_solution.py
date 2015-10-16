@@ -49,7 +49,7 @@ for i in range(0, len(vcxproj_paths)):
   build_configuration_string += build_configuration.replace('PROJECT_GUID', vcxproj_guids[i])
 build_configuration_string = build_configuration_string[:-1]
 
-sln_in = open('template.sln', 'r')
+sln_in = open('utils\\template.sln', 'r')
 template_sln = sln_in.read()
 sln_in.close()
 
