@@ -4,11 +4,12 @@ compiler:
 script:
   - gcc -O2 ./utils/platypus.c -o ./utils/platypus
   - mkdir report
-  - files=`find . -name \*.h -print -o -name \*.hpp -print -o -name \*.cpp -print -o -name \*.c -print | sed -e ':a;N;$!ba;s/\n/ /g'`
+  - files=`find . -name \*.h -print -o -name \*.cpp -print | sed -e ':a;N;$!ba;s/\n/ /g'`
   - ./utils/platypus -o ./report $files
 after_success:
-  for i in report/*; do echo $i; curl --ftp-create-dirs -T ./$i ftp://ip-2-188.unn.ru/$i; done;
-  echo "ftp://ip-2-188.unn.ru/report/index.html"
+  version=$TRAVIS_BRANCH'_'$TRAVIS_BUILD_NUMBER; 
+  echo "ftp://ip-2-188.unn.ru/$version/report/index.html"; 
+  for i in report/*; do echo $i; curl --ftp-create-dirs -T ./$i ftp://ip-2-188.unn.ru/$version/$i; done;
+  echo "ftp://ip-2-188.unn.ru/$version/report/index.html"
 notifications:
   email: false
-
