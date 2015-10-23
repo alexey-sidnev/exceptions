@@ -5,7 +5,7 @@ script:
   - gcc -O2 ./utils/platypus.c -o ./utils/platypus
   - mkdir report
   - files=`find . -name \*.h -print -o -name \*.cpp -print | sed -e ':a;N;$!ba;s/\n/ /g'`
-  - ./utils/platypus -o ./report $files
+  - ./utils/platypus -a 60 -o ./report $files
 after_success:
   version=$TRAVIS_REPO_SLUG'/'$TRAVIS_BRANCH'_'$TRAVIS_BUILD_NUMBER; 
   echo "ftp://ip-2-188.unn.ru/$version/report/index.html"; 
