@@ -25,6 +25,8 @@ MyException::MyException(MyException &e)
 	errType=e.errType;
 	if(e.ex!=0)
 		ex=new MyException(*(e.ex)); 
+	else 
+		ex=0;
 }
 
 MyException::~MyException()
