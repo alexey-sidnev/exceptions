@@ -12,7 +12,7 @@ class A {
 class B : public A {
  public:
   bool member() {
-	  return true;
+	return true;
   }
 };
 
