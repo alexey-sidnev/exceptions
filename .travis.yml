@@ -7,9 +7,9 @@ script:
   - files=`find . -name \*.h -print -o -name \*.cpp -print | sed -e ':a;N;$!ba;s/\n/ /g'`
   - ./utils/platypus -a 60 -o ./report $files
 after_success:
-  version=$TRAVIS_REPO_SLUG'/'$TRAVIS_BRANCH'_'$TRAVIS_BUILD_NUMBER; 
-  echo "ftp://ip-2-188.unn.ru/$version/report/index.html"; 
-  for i in report/*; do echo $i; curl --ftp-create-dirs -T ./$i ftp://ip-2-188.unn.ru/$version/$i; done;
-  echo "ftp://ip-2-188.unn.ru/$version/report/index.html"
+  - version=$TRAVIS_REPO_SLUG'/'$TRAVIS_BRANCH'_'$TRAVIS_BUILD_NUMBER
+  - echo "ftp://old.software.unn.ru/$version/report/index.html"
+  - for i in report/*; do echo $i; curl --ftp-create-dirs -T ./$i -u $FTP_USER:$FTP_PASSWORD ftp://old.software.unn.ru/$version/$i; done
+  - echo "ftp://old.software.unn.ru/$version/report/index.html"
 notifications:
   email: false
