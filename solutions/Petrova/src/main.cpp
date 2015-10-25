@@ -49,8 +49,22 @@ int main() {
     }
     catch(MyException &e) {
       e.WriteLog();
+    }  
+   try {
+      double sum = 0.;
+      
+      sum = Test4(10.1);
+      printf("sum(10.1) =  %lf\n", sum);
+
+      sum = Test4(10);
+      printf("sum(10) =  %lf\n", sum);
     }
-  } catch(...) { }
+    catch(MyException &e) {
+      e.WriteLog();
+    }
+  }
+
+  catch(...) { }
   
   printf("Exceptions (finish).\n");
 

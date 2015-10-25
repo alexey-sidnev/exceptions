@@ -8,10 +8,10 @@ T MyDiv(T a, T b) {
 	if (b == 0)
 	{
 		char *st = new char [100];
-		sprintf(st,"MyDiv parem: a=%lf b = %lf", a, b);
+		sprintf(st,"MyDiv perem: a=%lf b = %lf", a, b);
 		throw test2(st, 0);
 	}
-	//if (b!=0)
+	else
 		return a / b;
 }
 #endif  // DIV_H

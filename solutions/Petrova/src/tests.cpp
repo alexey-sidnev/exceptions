@@ -38,23 +38,28 @@ void Test1(unsigned int size) {
   }
   catch(...)
   {
-	  throw test1("No mem", 0);
+	  char *st = new char[100];
+	  sprintf(st, "No mem exception with size %u", size);
+
+	  throw test1(st, 0);
   }
-}  
+
+}
 
 void Test2() {
   for (int i = 0; i < EXP_TEST2_COUNT; i++) {
     double x = rand();
     double y = rand();
-	try{
+
+	try
+	{
     MyDiv(x, y);
-  }
-  catch(test2 &e)
-  {
-	  char *st = new char[100];
-	  sprintf(st, "div by zero %lf %lf", x, y);
-	  throw test2(st, new MyException(e));
-  }
+	}
+	catch(test2 &e)
+	{
+		char *st = new char[100];
+		sprintf(st, "div by zero %lf %lf", x, y);
+		throw test2(st, new MyException(e));  }
 
   }
   
@@ -62,7 +67,6 @@ void Test2() {
 }
 
 void Test3(A *b) {
-	char c;
 	try
 	{
 		if (dynamic_cast<B&>(*b).member()) {
@@ -74,16 +78,46 @@ void Test3(A *b) {
 	}
 	catch(...)
 	{
-		if (b->member())
-			c = 'B';
-		else
-			c = 'A';
-		char *str_1 = new char[100];
-		sprintf(str_1, "test 3 passed with arg (b=%c)", c);
+		char *st = new char[100];
+		sprintf(st, "dynamic cast exc");
 
-		throw test3(str_1, 0);
+		throw test3(st, 0);
 	}
 
 	printf("Test3 passed.\n");
 }
 
+double Sum(long double n)
+{
+	if (n < 0) return 0;
+	if (n == 0. || n== -0.)
+	{
+		char *st = new char[100];
+		 sprintf(st,"div by 0 exc");
+		 throw test3(st, 0);
+	}
+	try
+	{
+		return 1./n + Sum(n - 1);
+	}
+	catch(MyException &e)
+	{
+		char *st = new char[100];
+		sprintf(st,"wrong arg %lf", n);
+		throw test4(st, new MyException(e));
+	}
+}
+
+double Test4(long double n)
+{
+	try 
+	{
+		return Sum(n);
+	}
+	catch (MyException &e)
+	{
+		char *st = new char[100];
+		sprintf(st,"wrong arg %lf", n);
+		throw test4(st, new MyException(e));
+	}
+}
