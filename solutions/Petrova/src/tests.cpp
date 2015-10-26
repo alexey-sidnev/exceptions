@@ -39,7 +39,7 @@ void Test1(unsigned int size) {
   catch(...)
   {
 	  char *st = new char[100];
-	  sprintf(st, "No mem exception with size %u", size);
+	  sprintf_s(st, 100, "No mem exception with size %u", size);
 
 	  throw test1(st, 0);
   }
@@ -58,7 +58,7 @@ void Test2() {
 	catch(test2 &e)
 	{
 		char *st = new char[100];
-		sprintf(st, "div by zero %lf %lf", x, y);
+		sprintf_s(st, 100, "div by zero %lf %lf", x, y);
 		throw test2(st, new MyException(e));  }
 
   }
@@ -79,7 +79,7 @@ void Test3(A *b) {
 	catch(...)
 	{
 		char *st = new char[100];
-		sprintf(st, "dynamic cast exc");
+		sprintf_s(st, 100, "dynamic cast exc");
 
 		throw test3(st, 0);
 	}
@@ -93,7 +93,7 @@ double Sum(long double n)
 	if (n == 0. || n== -0.)
 	{
 		char *st = new char[100];
-		 sprintf(st,"div by 0 exc");
+		 sprintf_s(st, 100, "div by 0 exc");
 		 throw test3(st, 0);
 	}
 	try
@@ -103,7 +103,7 @@ double Sum(long double n)
 	catch(MyException &e)
 	{
 		char *st = new char[100];
-		sprintf(st,"wrong arg %lf", n);
+		sprintf_s(st, 100, "wrong arg %lf", n);
 		throw test4(st, new MyException(e));
 	}
 }
@@ -117,7 +117,7 @@ double Test4(long double n)
 	catch (MyException &e)
 	{
 		char *st = new char[100];
-		sprintf(st,"wrong arg %lf", n);
+		sprintf_s(st, 100, "wrong arg %lf", n);
 		throw test4(st, new MyException(e));
 	}
 }

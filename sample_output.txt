@@ -1,0 +1,70 @@
+Exceptions (start).
+  Exception MemoryNotAllocated: Too much memory for allocation in operator new.
+	[tests.cpp] Line 21: mas = new double[size];
+	[tests.cpp] Line 14: void Test1(unsigned int size), size = 3166228133
+  Exception MemoryNotAllocated: Too much memory for allocation in operator new.
+	[tests.cpp] Line 21: mas = new double[size];
+	[tests.cpp] Line 14: void Test1(unsigned int size), size = 2699671449
+Test1 (377167) passed:
+	min = 0.116317, max = 0.120646, avg = 0.118369
+Test1 (379625) passed:
+	min = 0.117316, max = 0.120586, avg = 0.118512
+Test1 (504226) passed:
+	min = 0.160055, max = 0.165323, avg = 0.161729
+  Exception MemoryNotAllocated: Too much memory for allocation in operator new.
+	[tests.cpp] Line 21: mas = new double[size];
+	[tests.cpp] Line 14: void Test1(unsigned int size), size = 2351178174
+Test1 (437412) passed:
+	min = 0.136622, max = 0.140043, avg = 0.138312
+  Exception MemoryNotAllocated: Too much memory for allocation in operator new.
+	[tests.cpp] Line 21: mas = new double[size];
+	[tests.cpp] Line 14: void Test1(unsigned int size), size = 2569237894
+Test1 (377974) passed:
+	min = 0.116865, max = 0.120848, avg = 0.118171
+Test1 (481721) passed:
+	min = 0.151508, max = 0.164762, avg = 0.155908
+Test2 passed.
+Test2 passed.
+Test2 passed.
+Test2 passed.
+  Exception DivisionByZero: Operator '/'. 
+	[div.h] Line 16: return a/b;
+	[div.h] Line 8: T MyDiv(8338, 0)
+  Exception UnknownException: 	[tests.cpp] Line 65: MyDiv(x, y);
+	[tests.cpp] Line 46: void Test2()
+Test2 passed.
+Test2 passed.
+Test2 passed.
+Test2 passed.
+Test2 passed.
+Class A
+Test3 passed.
+  Exception BadTypeCast: Error in dynamic_cast.
+	[tests.cpp] Line 80: if(dynamic_cast<B&>(*b).member())
+	[tests.cpp] Line 78: void Test3(A *b)
+sum(10.1) =  12.784979
+  Exception DivisionByZero: Argument is zero in function Sum(double n).
+	[tests.cpp] Line 97: double Sum(long double n)
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 1
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 2
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 3
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 4
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 5
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 6
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 7
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 8
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 9
+  Exception WrongArgument: 
+	[tests.cpp] Line 97: double Sum(long double n), n = 10
+  Exception UnknownException: 
+	[tests.cpp] Line 110: double Test4(long double n), n = 10
+Exceptions (finish).

@@ -17,7 +17,7 @@ id = 1
 for root, dirnames, filenames in os.walk('.'):
   for filename in fnmatch.filter(filenames, '*.vcxproj'):
     path = os.path.join(root, filename)
-    new_path = os.path.join(root, filename.replace('.', str(id) + '.'))
+    new_path = os.path.join(root, filename.replace('.', '_' + str(id) + '.'))
     id += 1
     os.rename(path, new_path)
     vcxproj_file = open(new_path, 'r')

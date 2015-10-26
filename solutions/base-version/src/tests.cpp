@@ -17,7 +17,7 @@ void Test1(unsigned int size) {
     avgTime = 0.;
   double *mas = 0;
   mas = new double[size];
- 
+
   for (int i = 0; i < EXP_TEST1_COUNT; i++) {
     double time;
     InitRandPositiveDouble(mas, size);
@@ -29,15 +29,15 @@ void Test1(unsigned int size) {
   }
 
   avgTime /= EXP_TEST1_COUNT;
-  printf("Test1 (%i) passed:\n\tmin=%lf, max=%lf, avg=%lf\n", size,
+  printf("Test1 (%i) passed:\n\tmin = %lf, max = %lf, avg = %lf\n", size,
     minTime, maxTime, avgTime);
   delete[] mas;
 }
 
 void Test2() {
   for (int i = 0; i < EXP_TEST2_COUNT; i++) {
-    double x = rand();
-    double y = rand();
+    long double x = rand();
+    long double y = rand();
     MyDiv(x, y);
   }
 
@@ -52,4 +52,19 @@ void Test3(A *b) {
   }
 
   printf("Test3 passed.\n");
+}
+
+double Sum(long double n) {
+  if (n < 0) return 0.;
+  // if (n == 0. || n === -0.) throw YourExceptionType(...);
+  // try {
+  return 1./n + Sum(n - 1);
+  // } catch (YourExceptionType &e) {
+  // }
+}
+
+double Test4(long double n) {
+  // try {
+  return Sum(n);
+  // } catch ...
 }

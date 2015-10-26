@@ -8,7 +8,7 @@ T MyDiv(T a, T b) {
 	if (b == 0)
 	{
 		char *st = new char [100];
-		sprintf(st,"MyDiv perem: a=%lf b = %lf", a, b);
+		sprintf_s(st, 100, "MyDiv perem: a=%lf b = %lf", a, b);
 		throw test2(st, 0);
 	}
 	else
