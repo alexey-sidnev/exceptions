@@ -8,7 +8,7 @@ T MyDiv(T a, T b)
 	if (b == 0)
 	{
 		char *st = new char[300];
-		sprintf(st, "MyDiv parem: a=%lf b=%lf", a, b);
+		sprintf_s(st,300, "MyDiv parem: a=%lf b=%lf", a, b);
 		throw divZero(st, 0);
 	}
 	if (b != 0)

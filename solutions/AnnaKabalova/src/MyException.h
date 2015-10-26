@@ -16,7 +16,7 @@ public:
 	MyException(MyException&ex)
 	{
 		str = new char[strlen(ex.str)];
-		strcpy(str, ex.str);
+		strcpy_s(str,300, ex.str);
 		if (ex.exc != 0)
 			exc = new MyException(*(ex.exc));
 		else exc = 0;
