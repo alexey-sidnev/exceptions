@@ -4,7 +4,7 @@ compiler:
   - gcc
 script:
   - files=`find . -name \*.h -print -o -name \*.cpp -print -o -name \*.c -print | sed -e ':a;N;$!ba;s/\n/ /g'`
-  - python --filter=-legal/copyright,runtime/threadsafe_fn ./utils/cpplint.py $files
+  - python ./utils/cpplint.py --filter=-legal/copyright,runtime/threadsafe_fn $files
   - gcc -O2 ./utils/platypus.c -o ./utils/platypus
   - mkdir report
   - ./utils/platypus -a 60 -o ./report $files
