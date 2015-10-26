@@ -1,10 +1,12 @@
-language: cpp
+language: cpp python
+python: '2.7'
 compiler:
   - gcc
 script:
+  - files=`find . -name \*.h -print -o -name \*.cpp -print -o -name \*.c -print | sed -e ':a;N;$!ba;s/\n/ /g'`
+  - python ./utils/cpplint.py $files
   - gcc -O2 ./utils/platypus.c -o ./utils/platypus
   - mkdir report
-  - files=`find . -name \*.h -print -o -name \*.cpp -print | sed -e ':a;N;$!ba;s/\n/ /g'`
   - ./utils/platypus -a 60 -o ./report $files
 after_success:
   - version=$TRAVIS_REPO_SLUG'/'$TRAVIS_BRANCH'_'$TRAVIS_BUILD_NUMBER
