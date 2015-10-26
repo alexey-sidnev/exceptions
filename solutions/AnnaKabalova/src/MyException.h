@@ -8,25 +8,9 @@ class MyException {
 public:
 	char *str;
 	MyException* exc;
-	MyException(char *_str, MyException*ex)
-	{
-		str = _str;
-		exc = ex;
-	}
-	MyException(MyException&ex)
-	{
-		str = new char[strlen(ex.str)];
-		strcpy_s(str,300, ex.str);
-		if (ex.exc != 0)
-			exc = new MyException(*(ex.exc));
-		else exc = 0;
-	}
-	~MyException()
-	{
-		if (exc != 0)
-			delete exc;
-		delete[]str;
-	}
+	MyException(char *_str, MyException*ex);
+	MyException(MyException&ex);
+	~MyException();
 	virtual void WriteLog();
 };
 
