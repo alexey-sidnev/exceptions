@@ -1,11 +1,11 @@
 #pragma once
 
-#ifndef EXCEPTIONS_H
-#define EXCEPTIONS_H
+#ifndef SOLUTIONS_BASE_VERSION_SRC_MYEXCEPTION_H_
+#define SOLUTIONS_BASE_VERSION_SRC_MYEXCEPTION_H_
 
 class MyException {
  public:
   void WriteLog();
 };
 
-#endif  // EXCEPTIONS_H
+#endif  // SOLUTIONS_BASE_VERSION_SRC_MYEXCEPTION_H_

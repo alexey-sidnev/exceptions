@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef TESTS_H
-#define TESTS_H
+#ifndef SOLUTIONS_BASE_VERSION_SRC_TESTS_H_  
+#define SOLUTIONS_BASE_VERSION_SRC_TESTS_H_  
 
 #include "classes.h"
 
@@ -10,4 +10,4 @@ void Test2();
 void Test3(A *b);
 double Test4(long double n);
 
-#endif  // TESTS_H
+#endif  // SOLUTIONS_BASE_VERSION_SRC_TESTS_H_  
