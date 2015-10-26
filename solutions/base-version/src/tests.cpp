@@ -17,7 +17,7 @@ void Test1(unsigned int size) {
     avgTime = 0.;
   double *mas = 0;
   mas = new double[size];
- 
+
   for (int i = 0; i < EXP_TEST1_COUNT; i++) {
     double time;
     InitRandPositiveDouble(mas, size);
