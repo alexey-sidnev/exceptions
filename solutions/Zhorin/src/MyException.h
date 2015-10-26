@@ -1,10 +1,14 @@
 #pragma once
 #include <iostream>
+
+#include <stdio.h>
 #include <string>
+
 using namespace std;
+
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
-#define _CRT_SECURE_NO_WARNINGS
+
 class MyException {
 protected:
 	MyException *prev;

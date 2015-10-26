@@ -9,7 +9,7 @@ T MyDiv(T a, T b) {
 	setlocale(LC_ALL, "Russian");
 	if (b == 0){
 		char*Log1 = new char[300];
-		sprintf(Log1, "Произошло деление на ноль, входные параметры:(a=%lf) и (b=%lf)", a, b);
+		sprintf_s(Log1, 300, "Division by zero, arguments:(a=%lf) and (b=%lf)", a, b);
 
 		throw DivByZero(Log1, 0);
 	}

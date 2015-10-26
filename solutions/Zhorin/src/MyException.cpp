@@ -16,7 +16,7 @@ MyException::MyException(const MyException&ex){
 	if (ex.Log != 0)
 	{
 		Log = new char[strlen(ex.Log)];
-		strcpy(Log, ex.Log);
+		strcpy_s(Log, 300, ex.Log);
 	}
 
 	if (ex.prev != 0)

@@ -8,12 +8,12 @@
 #include "classes.h"
 #include "MyException.h"
 
-#define _CRT_SECURE_NO_WARNINGS
+
 #define EXP_TEST1_COUNT 10
 #define EXP_TEST2_COUNT 1000
 
 void Test1(unsigned int size) {
-	setlocale(LC_ALL, "Russian");
+
 	double minTime = std::numeric_limits<double>::max(),
 		maxTime = 0.,
 		avgTime = 0.;
@@ -39,7 +39,7 @@ void Test1(unsigned int size) {
 	}
 	catch (...){
 		char*Log1 = new char[300];
-		sprintf(Log1, "Не удалось выделить память под массив размером %u", size);
+		sprintf_s(Log1, 300, "Too much memory for allocation in operator new, argument: (size=%u)", size);
 
 
 		throw NoMemory(Log1, 0);
@@ -57,7 +57,7 @@ void Test2() {
 		}
 		catch (MyException& dex){
 			char*Log1 = new char[300];
-			sprintf(Log1, "Произошла ошибка во 2 тесте");
+			sprintf_s(Log1, 300, "Error in function Test2");
 
 			throw DivByZero(Log1, new MyException(dex));
 
@@ -83,7 +83,7 @@ void Test3(A *b) {
 		else
 			c = 'A';
 
-		sprintf(Log1, "Ошибка с преобразованием типа, тест 3 прошел с аргументом (b=%c)", c);
+		sprintf_s(Log1, 300, "Error in function Test3 with argument: (b=%c)", c);
 
 		throw ExcpForTest3(Log1, 0);
 
@@ -97,7 +97,7 @@ double Sum(long double n) {
 	if (n < 0) return 0.;
 	if (n == 0. || n == -0.){
 		char*Log1 = new char[300];
-		sprintf(Log1, "Произошло деление на ноль в функции sum");
+		sprintf_s(Log1, 300, "Sum: division by zero ");
 
 		throw DivByZero(Log1, 0);
 	}
@@ -105,10 +105,10 @@ double Sum(long double n) {
 		return 1. / n + Sum(n - 1);
 	}
 	catch (MyException &e) {
-		char*Log2 = new char[300];
-		sprintf(Log2, "Ошибка функции sum с аргументом (n=%lf)", n);
+		char*Log1 = new char[300];
+		sprintf_s(Log1, 300, "Error in function sum with argument: (n=%lf)", n);
 
-		throw ExcpForTest4(Log2, new MyException(e));
+		throw ExcpForTest4(Log1, new MyException(e));
 	}
 }
 
@@ -117,9 +117,9 @@ double Test4(long double n) {
 		return Sum(n);
 	}
 	catch (MyException &e){
-		char*Log2 = new char[300];
-		sprintf(Log2, "Ошибка в тесте 4 с аргументом (n=%lf)", n);
+		char*Log1 = new char[300];
+		sprintf_s(Log1, 300, "Error in function Test4 with argument: (n=%lf)", n);
 
-		throw ExcpForTest4(Log2, new MyException(e));
+		throw ExcpForTest4(Log1, new MyException(e));
 	}
 }
