@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CLASSES_H
-#define CLASSES_H
+#ifndef SOLUTIONS_ZHORIN_SRC_CLASSES_H_
+#define SOLUTIONS_ZHORIN_SRC_CLASSES_H_
 
 class A {
  public:
@@ -16,4 +16,4 @@ class B : public A {
   }
 };
 
-#endif  // CLASSES_H
+#endif  // SOLUTIONS_ZHORIN_SRC_CLASSES_H_

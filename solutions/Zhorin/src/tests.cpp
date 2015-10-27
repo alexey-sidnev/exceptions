@@ -34,7 +34,8 @@ void Test1(unsigned int size) {
   }
   catch (...) {
     char*Log1 = new char[300];
-    sprintf_s(Log1, 300, "Too much memory for allocation in operator new, argument: (size=%u)", size);
+    sprintf_s(Log1, 300,
+    "Too much memory for allocation in operator new, argument: (size=%u)", size);
     throw NoMemory(Log1, 0);
   }
 }
@@ -59,7 +60,7 @@ void Test3(A *b) {
   try {
     if (dynamic_cast<B&>(*b).member())
       printf("Class A\n");
-  else
+    else
       printf("Class B\n");
   }
   catch (...) {
@@ -96,7 +97,7 @@ double Test4(long double n) {
   try {
     return Sum(n);
   }
-  catch (MyException &e){
+  catch (MyException &e) {
     char*Log1 = new char[300];
     sprintf_s(Log1, 300, "Error in function Test4 with argument: (n=%lf)", n);
     throw ExcpForTest4(Log1, new MyException(e));
