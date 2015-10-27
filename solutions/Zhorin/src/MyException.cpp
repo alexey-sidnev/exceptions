@@ -12,7 +12,7 @@ MyException::MyException(char*Log_1, MyException *prev_1) {
 
 }
 
-MyException::MyException(const MyException&ex){
+MyException::MyException(const MyException&ex) {
   if (ex.Log != 0) {
     Log = new char[strlen(ex.Log)];
     strcpy_s(Log, 300, ex.Log);
