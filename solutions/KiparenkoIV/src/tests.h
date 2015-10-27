@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef TESTS_H
-#define TESTS_H
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_TESTS_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_TESTS_H_
 
 #include "classes.h"
 
