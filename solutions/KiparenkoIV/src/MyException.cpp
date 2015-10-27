@@ -7,7 +7,7 @@ MyException::MyException(int err, char* sys, MyException* e) {
   ex = e;
 }
 
-MyException::MyException(MyException &e) {
+MyException::MyException(const MyException &e) {
   if (e.system != 0) {
     system = new char[strlen(e.system)];
     strcpy_s(system, 90, e.system);
