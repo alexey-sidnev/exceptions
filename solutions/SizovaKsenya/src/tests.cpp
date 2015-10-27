@@ -18,12 +18,12 @@ void Test1(unsigned int size) {
     avgTime = 0.;
   double *mas = 0;
   try {
-    mas = new double [size];
+    mas = new double[size];
   }
   catch(...) {
-	char *s = new char [l];
+	char*s = new char[l];
 	sprintf_s(s, l, "Exception MemoryNotAllocated: (size=%u)", size);
-	throw Exception1 (s, 0);
+	throw Exception1(s, 0);
   }
   for (int i = 0; i < EXP_TEST1_COUNT; i++) {
     double time;
@@ -47,9 +47,9 @@ void Test2() {
       MyDiv(x, y);
 	}
 	catch (MyException &e) {
-      char *s = new char[l];
+      char*s = new char[l];
       sprintf_s(s, l, "Exception DivisionByZero: (x=%lf), (y=%lf)", x, y);
-	  throw Exception2 (s, new MyException(e));
+	  throw Exception2(s, new MyException(e));
 	}
   }
   printf("Test2 passed.\n");
@@ -65,7 +65,7 @@ void Test3(A *b) {
 	}
   }
   catch (...) {
-	char *s = new char[l];
+	char*s = new char[l];
 	sprintf_s(s, l, "Exception BadTypeCast: Error in dynamic_cast.");
 	throw Exception3(s, 0);
   }
@@ -75,15 +75,15 @@ void Test3(A *b) {
 double Sum(long double n) {
   if (n < 0) return 0.;
   if (n == 0.||n==-0.) {
-    char *s = new char[l];  
-	sprintf_s(s,l,"Exception DivisionByZero: Argument is zero in Sum");  
-	throw Exception3 (s,0);  
+    char*s = new char[l];  
+	sprintf_s(s, l,"Exception DivisionByZero: Argument is zero in Sum");  
+	throw Exception3(s,0);  
   }  
   try {  
 	return 1./n + Sum(n - 1);  
   }   
   catch (MyException &e) {
-	char *s = new char[l];
+	char*s = new char[l];
 	sprintf_s(s, l, "Exception WrongArgument:(n=%lf)", n);
 	throw Exception4(s, new MyException(e));
   }
@@ -94,7 +94,7 @@ double Test4(long double n) {
     return Sum(n);
   }  
   catch (MyException &e) {
-	char *s = new char[l];
+	char*s = new char[l];
 	sprintf_s(s, l, "Exception WrongArgument: (n=%lf)", n);
 	throw Exception4(s, new MyException(e));
   }
