@@ -10,8 +10,8 @@ void InitRandPositiveDouble(double *mas, int size) {
         reinterpret_cast<unsigned char*>(mas+j);
       for (int i = 0; i < sizeof(double); i++)
         mas_as_uchar_array[i] = rand() % 256;
-	} while ( (mas_as_uint64_array[j] & mask) == mask );
-   // Positive only
-	mas_as_uint64_array[j] &= 0x7FFFFFFFFFFFFFFF;
+    }  while ( (mas_as_uint64_array[j] & mask) == mask );
+// Positive only
+    mas_as_uint64_array[j] &= 0x7FFFFFFFFFFFFFFF;
   }
 }
