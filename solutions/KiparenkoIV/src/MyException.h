@@ -14,7 +14,7 @@ class MyException {
   int errType;
   // MyException(int err, char* sys=0);
   explicit MyException(int err = 0, char* sys = 0, MyException* e = 0);
-  explicit MyException(MyException & e);
+  explicit MyException(const MyException & e);
   ~MyException();
   void WriteLog();
 };
