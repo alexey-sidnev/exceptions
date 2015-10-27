@@ -1,7 +1,7 @@
 
 #pragma once
-#ifndef DIV_H
-#define DIV_H
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_DIV_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_DIV_H_
 
 #include "MyException.h"
 
