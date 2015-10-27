@@ -53,7 +53,7 @@ int main() {
 
     try {
       double sum = 0.;
-      
+
       sum = Test4(10.1);
       printf("sum(10.1) =  %lf\n", sum);
 
