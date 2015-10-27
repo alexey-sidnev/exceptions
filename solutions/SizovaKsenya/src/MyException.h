@@ -1,13 +1,13 @@
 #pragma once
 
-#ifndef SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_ 
-#define SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_ 
+#ifndef SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_
+#define SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_
 #include <iostream>
 #include <string>
 using namespace std;
 
-class MyException {
-protected: MyException *e;
+class MyException { protected:
+  MyException *e;
   char *str;
 public: void WriteLog();
   virtual ~MyException();
@@ -36,4 +36,4 @@ public: Exception4(char *str1, MyException *e1) : MyException(str1, e1){}
   Exception4(const MyException &E) : MyException(E){}
 };
 
-#endif // SOLUTIONS_BASE_VERSION_SRC_MYEXCEPTION_H_
+#endif  // SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_

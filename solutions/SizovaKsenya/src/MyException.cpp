@@ -15,10 +15,10 @@ MyException::MyException(char *str0, MyException *e0) {
 MyException::MyException(const MyException &E) {
   if (E.str != 0) {
     str = new char[strlen(E.str)];
-	strcpy_s (str, 300, E.str);
+    strcpy_s( str, 300, E.str);
   }
   if (E.e != 0)
-	e = new MyException (*(E.e));
+	e = new MyException ( *(E.e));
   else
     e = 0;
 }
