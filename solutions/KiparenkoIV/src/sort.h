@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef SORT_H
-#define SORT_H
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_SORT_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_SORT_H_
 
 double Sort(double *mas, int size);
 
