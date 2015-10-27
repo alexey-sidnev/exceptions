@@ -96,7 +96,8 @@ double Test4(long double n) {
   }
   catch (MyException& e) {
     char *r = new char[90];
-    sprintf_s(r, 90, "Test4 with argument (n=%lf) with call another function", n);
+    sprintf_s(r, 90,
+              "Test4 with argument (n=%lf) with call another function", n);
     throw ContainException(r, new MyException(e));
   }
 }
