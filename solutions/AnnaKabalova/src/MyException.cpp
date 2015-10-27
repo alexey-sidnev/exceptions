@@ -3,7 +3,7 @@ MyException::MyException(char *_str, MyException*ex) {
   str = _str;
   exc = ex;
 }
-MyException::MyException(MyException&ex) {
+MyException::MyException(const MyException&ex) {
   str = new char[strlen(ex.str)];
   strcpy_s(str, 300, ex.str);
   if (ex.exc != 0)

@@ -8,7 +8,7 @@ class MyException {
   char *str;
   MyException* exc;
   MyException(char *_str, MyException*ex);
-  MyException(MyException&ex);
+  MyException(const MyException&ex);
   ~MyException();
   virtual void WriteLog();
 };
