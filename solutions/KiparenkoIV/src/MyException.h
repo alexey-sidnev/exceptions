@@ -1,8 +1,8 @@
 
 #pragma once
 
-#ifndef SOLUTIONS_KIPARENKOIV_SRC_EXCEPTIONS_H_
-#define SOLUTIONS_KIPARENKOIV_SRC_EXCEPTIONS_H_
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
 
 static  char* errorsT[4] =
               {"DivByZero", "BadAlloc", "BadDynamicCast", "Transport"};
@@ -21,12 +21,14 @@ class MyException {
 
 class DivByZeroException :public MyException {
  public:
-  explicit DivByZeroException(char* sys, MyException* e = 0):MyException(0, sys, e){}
+  explicit DivByZeroException(char* sys, MyException* e = 0):
+                                      MyException(0, sys, e){}
 };
 
 class BadAllocException :public MyException {
  public:
-  explicit BadAllocException(char* sys, MyException* e = 0):MyException(1, sys, e){}
+  explicit BadAllocException(char* sys, MyException* e = 0):
+                                     MyException(1, sys, e){}
 };
 
 class BadDynamicCastException :public MyException {
@@ -37,9 +39,10 @@ class BadDynamicCastException :public MyException {
 
 class ContainException :public MyException {
  public:
-  explicit ContainException(char* sys, MyException* e = 0):MyException(3, sys, e){}
+  explicit ContainException(char* sys, MyException* e = 0):
+                                    MyException(3, sys, e){}
 };
 
 
 
-#endif  // SOLUTIONS_KIPARENKOIV_SRC_EXCEPTIONS_H_
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
