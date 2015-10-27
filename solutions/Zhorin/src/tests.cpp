@@ -35,7 +35,8 @@ void Test1(unsigned int size) {
   catch (...) {
     char*Log1 = new char[300];
     sprintf_s(Log1, 300,
-    "Too much memory for allocation in operator new, argument: (size=%u)", size);
+    "Too much memory for allocation in operator new, argument: (size=%u)",
+	size);
     throw NoMemory(Log1, 0);
   }
 }
@@ -44,7 +45,7 @@ void Test2() {
   for (int i = 0; i < EXP_TEST2_COUNT; i++) {
     double x = rand();
     double y = rand();
-    try{
+    try {
       MyDiv(x, y);
     }
     catch (MyException& dex) {

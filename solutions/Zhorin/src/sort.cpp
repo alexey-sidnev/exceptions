@@ -24,5 +24,5 @@ double Sort(double *mas, int size) {
   QueryPerformanceCounter(&finish);
 
   return (finish.QuadPart - start.QuadPart) /
-	  static_cast<double>(freq.QuadPart);
+  static_cast<double>(freq.QuadPart);
 }

@@ -1,13 +1,10 @@
 #pragma once
 #include <iostream>
-
 #include <stdio.h>
 #include <string>
 
-using namespace std;
-
-#ifndef EXCEPTIONS_H
-#define EXCEPTIONS_H
+#ifndef SOLUTIONS_ZHORIN_SRC_MYEXCEPTION_H_
+#define SOLUTIONS_ZHORIN_SRC_MYEXCEPTION_H_
 
 class MyException {
  protected:
@@ -16,7 +13,7 @@ class MyException {
  public:
   void WriteLog();
   virtual ~MyException();
-  MyException(){};
+  MyException(){}
   MyException(char*, MyException*);
   MyException(const MyException&);
 };
@@ -24,28 +21,20 @@ class DivByZero : public MyException {
  public:
   DivByZero(char*Log_1, MyException *prev_1) : MyException(Log_1, prev_1)
   {}
-  DivByZero(const MyException &ex) :MyException(ex)
-  {}
 };
 class NoMemory : public MyException {
  public:
   NoMemory(char*Log_1, MyException *prev_1) : MyException(Log_1, prev_1)
-  {}
-  NoMemory(const MyException &ex) :MyException(ex)
   {}
 };
 class ExcpForTest3 : public MyException {
  public:
   ExcpForTest3(char*Log_1, MyException *prev_1) : MyException(Log_1, prev_1)
   {}
-  ExcpForTest3(const MyException &ex) :MyException(ex)
-  {}
 };
 class ExcpForTest4 : public MyException {
  public:
   ExcpForTest4(char*Log_1, MyException *prev_1) : MyException(Log_1, prev_1)
   {}
-  ExcpForTest4(const MyException &ex) :MyException(ex)
-  {}
 };
-#endif  // EXCEPTIONS_H
+#endif  // SOLUTIONS_ZHORIN_SRC_MYEXCEPTION_H_

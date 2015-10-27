@@ -3,7 +3,7 @@
 void MyException::WriteLog() {
   if (prev != 0)
     (*prev).WriteLog();
-  cout << Log << endl;
+  printf("%s\n", Log);
 }
 
 MyException::MyException(char*Log_1, MyException *prev_1) {

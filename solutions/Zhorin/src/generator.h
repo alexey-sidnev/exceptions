@@ -1,8 +1,8 @@
 #pragma once
 
-#ifndef GENERATOR_H
-#define GENERATOR_H
+#ifndef SOLUTIONS_ZHORIN_SRC_GENERATOR_H_
+#define SOLUTIONS_ZHORIN_SRC_GENERATOR_H_
 
 void InitRandPositiveDouble(double *mas, int size);
 
-#endif  // GENERATOR_H
+#endif  // SOLUTIONS_ZHORIN_SRC_GENERATOR_H_
