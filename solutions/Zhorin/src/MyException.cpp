@@ -9,7 +9,6 @@ void MyException::WriteLog() {
 MyException::MyException(char*Log_1, MyException *prev_1) {
   Log = Log_1;
   prev = prev_1;
-
 }
 
 MyException::MyException(const MyException&ex) {
@@ -23,9 +22,8 @@ MyException::MyException(const MyException&ex) {
     prev = 0;
 }
 
-MyException::~MyException(){
-  {
-    if (prev != 0) delete prev;
-      delete[] Log;
-  }
+MyException::~MyException() {
+  if (prev != 0) 
+    delete prev;
+  delete[] Log;
 }
