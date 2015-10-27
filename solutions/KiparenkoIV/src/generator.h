@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef GENERATOR_H
-#define GENERATOR_H
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_GENERATOR_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_GENERATOR_H_
 
 void InitRandPositiveDouble(double *mas, int size);
 
