@@ -33,7 +33,7 @@ public: Exception3(char *str1, MyException *e1) : MyException(str1, e1){}
 
 class Exception4 : public MyException {
 public: Exception4(char *str1, MyException *e1) : MyException(str1, e1){}
-  Exception4(const MyException &E) : MyException(E){}
+  Exception4(const MyException &E) : MyException(E) {}
 };
 
 #endif  // SOLUTIONS_SIZOVAKSENYA_SRC_MYEXCEPTION_H_

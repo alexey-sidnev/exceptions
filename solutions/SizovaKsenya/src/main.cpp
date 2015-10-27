@@ -27,8 +27,7 @@ int main() {
         e.WriteLog();
       }
     }
-
-      for (int i = 0; i < TESTS_COUNT; i++) {
+    for (int i = 0; i < TESTS_COUNT; i++) {
       try {
         Test2();
       }
@@ -36,27 +35,22 @@ int main() {
         e.WriteLog();
       }
     }
-
     try {
       Test3(&b);
     }
     catch(MyException &e) {
       e.WriteLog();
     }
-
     try {
       Test3(&a);
     }
     catch(MyException &e) {
       e.WriteLog();
     }
-
     try {
       double sum = 0.;
-
       sum = Test4(10.1);
       printf("sum(10.1) =  %lf\n", sum);
-
       sum = Test4(10);
       printf("sum(10) =  %lf\n", sum);
     }
@@ -64,8 +58,6 @@ int main() {
       e.WriteLog();
     }
   } catch(...) { }
-
   printf("Exceptions (finish).\n");
-
   return 0;
 }
