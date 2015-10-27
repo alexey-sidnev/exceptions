@@ -51,7 +51,7 @@ void Test2() {
       char *r = new char[90];
       sprintf_s(r, 90, "Test2 with no arguments with call another function");
       throw ContainException(r, new MyException(e));
-	}
+    }
   }
   printf("Test2 passed.\n");
 }
@@ -67,7 +67,7 @@ void Test3(A *b) {
   catch (...) {
     char *r = new char[50];
     char e = (b->member())?'B':'A';
-    sprintf_s(r, 50 ,"Test3 with argument (b=%c)", e);
+    sprintf_s(r, 50, "Test3 with argument (b=%c)", e);
     throw BadDynamicCastException(r, 0);
   }
   printf("Test3 passed.\n");

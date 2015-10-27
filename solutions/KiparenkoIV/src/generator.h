@@ -5,4 +5,4 @@
 
 void InitRandPositiveDouble(double *mas, int size);
 
-#endif  // GENERATOR_H
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_GENERATOR_H_

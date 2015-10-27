@@ -8,7 +8,7 @@ MyException::MyException(int err, char* sys, MyException* e) {
 }
 
 MyException::MyException(MyException &e) {
-  if (e.system != 0){
+  if (e.system != 0) {
     system = new char[strlen(e.system)];
     strcpy_s(system, 90, e.system);
   }
@@ -28,5 +28,6 @@ MyException::~MyException() {
 void MyException::WriteLog() {
   if (ex != 0)
     ex->WriteLog();
-  printf("The error %s is generated in function %s.\n", errorsT[errType], system);
+  printf("The error %s is generated in function %s.\n",
+                             errorsT[errType], system);
 }

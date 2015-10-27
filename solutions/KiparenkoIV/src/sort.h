@@ -5,4 +5,4 @@
 
 double Sort(double *mas, int size);
 
-#endif  // SORT_H
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_SORT_H_

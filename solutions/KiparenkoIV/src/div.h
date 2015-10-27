@@ -15,4 +15,4 @@ T MyDiv(T a, T b) {
   return a / b;
 }
 
-#endif  // SOLUTIONS_KIPARENKOIV/SRC/DIV_H_
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_DIV_H_

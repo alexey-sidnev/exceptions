@@ -4,7 +4,8 @@
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
-static  char* errorsT[4] = {"DivByZero", "BadAlloc", "BadDynamicCast", "Transport"};
+static  char* errorsT[4] =
+              {"DivByZero", "BadAlloc", "BadDynamicCast", "Transport"};
 
 class MyException {
  public:
@@ -25,7 +26,7 @@ class DivByZeroException :public MyException {
 
 class BadAllocException :public MyException {
  public:
-  BadAllocException(char* sys, MyException* e=0):MyException(1, sys, e){}
+  BadAllocException(char* sys, MyException* e = 0):MyException(1, sys, e){}
 };
 
 class BadDynamicCastException :public MyException {
@@ -40,4 +41,4 @@ class ContainException :public MyException {
 
 
 
-#endif  // SOLUTIONS/KIPARENKOIV/SRC/EXCEPTIONS_H_
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_EXCEPTIONS_H_
