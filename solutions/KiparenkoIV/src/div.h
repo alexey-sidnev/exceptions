@@ -7,12 +7,12 @@
 
 template <class T>
 T MyDiv(T a, T b) {
-  if(b==0) {
-	char *r=new char[90];
-	sprintf_s(r,90,"MyDiv with arguments (a=%lf) and (b=%lf)",a,b);
-	throw DivByZeroException(r);
+  if(b == 0) {
+    char *r = new char[90];
+    sprintf_s(r, 90, "MyDiv with arguments (a=%lf) and (b=%lf)", a, b);
+    throw DivByZeroException(r);
   }
   return a / b;
 }
 
-#endif  // DIV_H
+#endif  // SOLUTIONS_KIPARENKOIV/SRC/DIV_H_

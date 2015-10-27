@@ -16,4 +16,4 @@ class B : public A {
   }
 };
 
-#endif  // CLASSES_H
+#endif  // SOLUTIONS/KIPARENKOIV/SRC/CLASSES_H_
