@@ -1,8 +1,8 @@
 
 #pragma once
 
-#ifndef SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
-#define SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_MYEXCEPTION_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_MYEXCEPTION_H_
 
 static  char* errorsT[4] =
               {"DivByZero", "BadAlloc", "BadDynamicCast", "Transport"};
@@ -45,4 +45,4 @@ class ContainException :public MyException {
 
 
 
-#endif  // SOLUTIONS_KIPARENKOIV_SRC_EXCEPTION_H_
+#endif  // SOLUTIONS_KIPARENKOIV_SRC_MYEXCEPTION_H_
