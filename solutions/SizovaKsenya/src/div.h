@@ -10,8 +10,9 @@ T MyDiv(T a, T b) {
     char *s = new char[m];
     sprintf_s(s, m, "Exception DivisionByZero: (a=%lf), (b=%lf)", a, b);
     throw Exception2(s, 0);
-  } else
+  } else {
     return a / b;
+  }
 }
 
 #endif  // SOLUTIONS_SIZOVAKSENYA_SRC_DIV_H_
