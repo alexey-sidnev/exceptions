@@ -36,7 +36,7 @@ void Test1(unsigned int size) {
     char*Log1 = new char[300];
     sprintf_s(Log1, 300,
     "Too much memory for allocation in operator new, argument: (size=%u)",
-	size);
+    size);
     throw NoMemory(Log1, 0);
   }
 }

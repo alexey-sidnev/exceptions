@@ -13,7 +13,7 @@ class MyException {
  public:
   void WriteLog();
   virtual ~MyException();
-  MyException(){}
+  MyException() {}
   MyException(char*, MyException*);
   MyException(const MyException&);
 };

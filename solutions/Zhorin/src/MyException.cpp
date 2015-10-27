@@ -23,7 +23,7 @@ MyException::MyException(const MyException&ex) {
 }
 
 MyException::~MyException() {
-  if (prev != 0) 
+  if (prev != 0)
     delete prev;
   delete[] Log;
 }
