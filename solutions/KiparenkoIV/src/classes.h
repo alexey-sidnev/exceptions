@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CLASSES_H
-#define CLASSES_H
+#ifndef SOLUTIONS_KIPARENKOIV_SRC_CLASSES_H_
+#define SOLUTIONS_KIPARENKOIV_SRC_CLASSES_H_
 
 class A {
  public:
