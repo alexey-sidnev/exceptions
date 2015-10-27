@@ -3,8 +3,8 @@
 void MyException::WriteLog() {
   if (e != 0)
     (*e).WriteLog();
-  cout << str;
-  cout << endl;
+  std::cout << str;
+  std::cout << std::endl;
 }
 
 MyException::MyException(char *str0, MyException *e0) {
