@@ -7,8 +7,8 @@
 template <class T>
 T MyDiv(T a, T b) {
   if (b == 0) {
-    char* temp = new char[MAX_LEN];
-    sprintf_s(temp, "Test 2, MyDiv(%f,%f)", a, b);
+    char temp[MAX_LEN];
+    sprintf_s(temp, MAX_LEN, "Test 2, MyDiv(%f,%f)", a, b);
     throw DivisionByZeroExcp(temp, NULL);
   }
   return a / b;

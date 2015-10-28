@@ -23,6 +23,6 @@ double Sort(double *mas, int size) {
   qsort(mas, size, sizeof(double), CmpDouble);
   QueryPerformanceCounter(&finish);
 
-  return (finish.QuadPart - start.QuadPart) / 
+  return (finish.QuadPart - start.QuadPart) /
   static_cast<double>(freq.QuadPart);
 }

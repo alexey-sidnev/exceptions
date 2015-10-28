@@ -39,7 +39,8 @@ class CastExcp :public MyException {
 };
 class SumExcp :public MyException {
  public:
-  SumExcp(char* _errorPosition, MyException* _prevEx) :MyException("Bad sum :(", _errorPosition, _prevEx){}
+  SumExcp(char* _errorPosition, MyException* _prevEx)
+  :MyException("Bad sum :(", _errorPosition, _prevEx){}
 };
 
 #endif  // SOLUTIONS_CHAPYGIN_SRC_MYEXCEPTION_H_
