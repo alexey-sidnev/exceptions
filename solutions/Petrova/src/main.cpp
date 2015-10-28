@@ -11,8 +11,7 @@ int main() {
   try {
     A a;
     B b;
-    srand(666);
-    
+    srand(666);    
     for (int i = 0; i < TESTS_COUNT; i++) {
       int size = 0;
       unsigned char *size_as_uchar_array = (unsigned char *)&size;
@@ -26,8 +25,7 @@ int main() {
       catch(MyException &e) {
         e.WriteLog();
       }
-    }
-    
+    }    
     for (int i = 0; i < TESTS_COUNT; i++) {
       try {
         Test2();
@@ -36,14 +34,12 @@ int main() {
         e.WriteLog();
       }
     }
-    
     try {
       Test3(&b);
     }
     catch(MyException &e) {
       e.WriteLog();
-    }
-    
+    }    
     try {
       Test3(&a);
     }
@@ -51,11 +47,9 @@ int main() {
       e.WriteLog();
     }  
    try {
-      double sum = 0.;
-      
+      double sum = 0.;      
       sum = Test4(10.1);
       printf("sum(10.1) =  %lf\n", sum);
-
       sum = Test4(10);
       printf("sum(10) =  %lf\n", sum);
     }
@@ -63,10 +57,7 @@ int main() {
       e.WriteLog();
     }
   }
-
-  catch(...) { }
-  
+  catch (...) { }  
   printf("Exceptions (finish).\n");
-
   return 0;
 }

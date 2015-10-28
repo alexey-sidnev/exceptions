@@ -17,7 +17,7 @@ void Test1(unsigned int size) {
     avgTime = 0.;
   double *mas = 0;
   try {
-  mas = new double[size]; 
+  mas = new double[size];
   for (int i = 0; i < EXP_TEST1_COUNT; i++) {
     double time;
     InitRandPositiveDouble(mas, size);
@@ -33,8 +33,8 @@ void Test1(unsigned int size) {
   delete[] mas;
   }
   catch (...) {
-	  char *st = new char[100];
-	  sprintf_s(st, 100, "No mem exception with size %u", size);
+      char *st = new char[100];
+      sprintf_s(st, 100, "No mem exception with size %u", size);
       throw test1(st, 0);
   }
 }
@@ -50,20 +50,20 @@ void Test2() {
     catch (test2 &e) {
         char *st = new char[100];
         sprintf_s(st, 100, "div by zero %lf %lf", x, y);
-        throw test2(st, new MyException(e)); 
+        throw test2(st, new MyException(e));
     }
-  }  
-  printf("Test2 passed.\n");  
+  }
+  printf("Test2 passed.\n"); 
 }
 
 void Test3(A *b) {
     try {
-		if (dynamic_cast<B&>(*b).member()) {
-			printf("Class A\n");
+         if (dynamic_cast<B&>(*b).member()) {
+            printf("Class A\n");
         } else {
-			printf("Class B\n");
+            printf("Class B\n");
         }
-	}
+    }
     catch (...) {
         char *st = new char[100];
         sprintf_s(st, 100, "dynamic cast exc");
@@ -83,18 +83,16 @@ double Sum(long double n) {
       return 1./n + Sum(n - 1);
   }
   catch (MyException &e) {
-	  char *st = new char[100];
+      char *st = new char[100];
       sprintf_s(st, 100, "wrong arg %lf", n);
       throw test4(st, new MyException(e));
   }
 }
 
-double Test4(long double n)
-{
-	try 
-	{
-		return Sum(n);
-	}
+double Test4(long double n) {
+    try {
+         return Sum(n);
+    }
 	catch (MyException &e) {
         char *st = new char[100];
         sprintf_s(st, 100, "wrong arg %lf", n);
