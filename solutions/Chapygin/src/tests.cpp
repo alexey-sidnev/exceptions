@@ -19,25 +19,24 @@ void Test1(unsigned int size) {
     avgTime = 0.;
   double *mas = 0;
   try {
-	  mas = new double[size];
+    mas = new double[size];
 
-	  for (int i = 0; i < EXP_TEST1_COUNT; i++) {
-		  double time;
-		  InitRandPositiveDouble(mas, size);
-		  time = Sort(mas, size);
+    for (int i = 0; i < EXP_TEST1_COUNT; i++) {
+      double time;
+      InitRandPositiveDouble(mas, size);
+      time = Sort(mas, size);
 
-		  if (time < minTime) minTime = time;
-		  if (time > maxTime) maxTime = time;
-		  avgTime += time;
-	  }
+      if (time < minTime) minTime = time;
+      if (time > maxTime) maxTime = time;
+      avgTime += time;
+    }
 
-	  avgTime /= EXP_TEST1_COUNT;
-	  printf("Test1 (%i) passed:\n\tmin = %lf, max = %lf, avg = %lf\n", size,
-		  minTime, maxTime, avgTime);
-	  delete[] mas;
+    avgTime /= EXP_TEST1_COUNT;
+    printf("Test1 (%i) passed:\n\tmin = %lf, max = %lf, avg = %lf\n", size, minTime, maxTime, avgTime);
+    delete[] mas;
   }
   catch (...) {
-	  throw(AllocationExcp("Error in Test 1", 0));
+    throw(AllocationExcp("Error in Test 1", 0));
   }
 }
 
@@ -45,34 +44,30 @@ void Test2() {
   for (int i = 0; i < EXP_TEST2_COUNT; i++) {
     long double x = rand();
     long double y = rand();
-	try{
-		MyDiv(x, y);
-	}
-	catch (MyException& ex) {
-		throw DivisionByZeroExcp("Error in Test 2", new MyException(ex));
-	}
+    try{
+      MyDiv(x, y);
+    }
+    catch (MyException& ex) {
+      throw DivisionByZeroExcp("Error in Test 2", new MyException(ex));
+    }
   }
 
   printf("Test2 passed.\n");
 }
 
 void Test3(A *b) {
-	try {
-		if (dynamic_cast<B&>(*b).member()) {
-			printf("Class A\n");
-		}
-		else {
-			printf("Class B\n");
-		}
-	}
-	catch (...){
-		char temp[MAX_LEN];
-		char btype;
-		if (b->member()) btype = 'B';
-		else btype = 'A';
-		sprintf(temp, "Object b is '%c' type", e);
-		throw CastExcp(temp, 0);
-	}
+  try {
+    if (dynamic_cast<B&>(*b).member()) printf("Class A\n");
+    else printf("Class B\n");
+  }
+  catch (...){
+    char temp[MAX_LEN];
+    char btype;
+    if (b->member()) btype = 'B';
+    else btype = 'A';
+    sprintf(temp, "Object b is '%c' type", btype);
+    throw CastExcp(temp, 0);
+  }
   printf("Test3 passed.\n");
 }
 
@@ -83,7 +78,7 @@ double Sum(long double n) {
     return 1./n + Sum(n - 1);
   } 
   catch (MyException &excp) {
-	  throw SumExcp("Error in sum function", new MyException(excp));
+    throw SumExcp("Error in sum function", new MyException(excp));
   }
 }
 
@@ -92,8 +87,8 @@ double Test4(long double n) {
   return Sum(n);
   }
   catch (MyException& excp) {
-	  char arg[MAX_LEN];
-	  sprintf(arg, "Error in test 4, arg = %lf", n);
-	  throw SumExcp(arg, new MyException(excp));
+    char arg[MAX_LEN];
+    sprintf(arg, "Error in test 4, arg = %lf", n);
+    throw SumExcp(arg, new MyException(excp));
   }
 }

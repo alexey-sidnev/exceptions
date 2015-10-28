@@ -6,11 +6,11 @@
 
 template <class T>
 T MyDiv(T a, T b) {
-	if (b == 0) {
-		char* temp = new char[MAX_LEN];
-		sprintf(temp, "Test 2, MyDiv(%f,%f)", a, b);
-		throw DivisionByZeroExcp(temp,0);
-	}
+  if (b == 0) {
+    char* temp = new char[MAX_LEN];
+    sprintf(temp, "Test 2, MyDiv(%f,%f)", a, b);
+    throw DivisionByZeroExcp(temp,0);
+  }
   return a / b;
 }
 
