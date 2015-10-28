@@ -59,10 +59,9 @@ void Test3(A *b) {
   try {
     if (dynamic_cast<B&>(*b).member()) {
       printf("Class A\n");
-    }
-	else {
+    } else {
       printf("Class B\n");
-    }
+     }
   }
   catch (...) {
     char*s = new char[l];
@@ -74,7 +73,7 @@ void Test3(A *b) {
 
 double Sum(long double n) {
   if (n < 0) return 0.;
-  if (n == 0.|| n==-0.) {
+  if (n == 0.|| n == -0.) {
     char*s = new char[l];
     sprintf_s(s, l, "Exception DivisionByZero: Argument is zero in Sum");
     throw Exception3(s, 0);
