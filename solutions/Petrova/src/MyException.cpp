@@ -19,7 +19,7 @@ MyException :: MyException(const MyException &EX) {
 void MyException::WriteLog() {
     if (ex != 0)
         ex->WriteLog();
-    cout << str <<endl;
+    std::cout << str <<std::endl;
 }
 
 MyException :: ~MyException() {
