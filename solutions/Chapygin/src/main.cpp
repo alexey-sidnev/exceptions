@@ -47,7 +47,7 @@ int main() {
       e.WriteLog();
     }
     try {
-      double sum = 0.; 
+      double sum = 0.;
       sum = Test4(10.1);
       printf("sum(10.1) =  %lf\n", sum);
       sum = Test4(10);

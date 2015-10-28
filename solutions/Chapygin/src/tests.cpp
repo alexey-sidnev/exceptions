@@ -63,7 +63,7 @@ void Test3(A *b) {
     else
       printf("Class B\n");
   }
-  catch (...){
+  catch (...) {
     char temp[MAX_LEN];
     char btype;
     if (b->member())
