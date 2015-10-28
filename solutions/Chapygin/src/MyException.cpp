@@ -1,20 +1,19 @@
 #include "MyException.h"
 #include <stdio.h>
-#include <string>
 
-MyException::MyException(char* _errorMessage, char* _errorPosition, MyException* _prevEx) {
-  strcpy(errorMessage, _errorMessage);
-  strcpy(errorPosition, _errorPosition);
+MyException::MyException(char* _eM, char* _eP, MyException* _prevEx) {
+  sprintf_s(errorMessage, MAX_LEN, _eM);
+  sprintf_s(errorPosition, MAX_LEN, _eP);
   prevEx = _prevEx;
 }
 
 MyException::MyException(const MyException& excp) {
-  strcpy(errorMessage, excp.errorMessage);
-  strcpy(errorPosition, excp.errorPosition);
+  sprintf_s(errorMessage, MAX_LEN, excp.errorMessage);
+  sprintf_s(errorPosition, MAX_LEN, excp.errorPosition);
   if (prevEx != NULL) prevEx = new MyException(*(excp.prevEx));
 }
 
-MyException::~MyException(){
+MyException::~MyException() {
   if (prevEx != NULL) {
     delete prevEx; prevEx = NULL;
   }
@@ -22,5 +21,6 @@ MyException::~MyException(){
 
 void MyException::WriteLog() {
   if (prevEx != NULL) prevEx->WriteLog();
-  printf("--Error Type: %s; \n--Error Position: %s;\n", errorMessage, errorPosition);
+  printf("--Error Type: %s; \n--Error Position: %s;\n",
+  errorMessage, errorPosition);
 }

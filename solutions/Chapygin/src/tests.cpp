@@ -32,7 +32,8 @@ void Test1(unsigned int size) {
     }
 
     avgTime /= EXP_TEST1_COUNT;
-    printf("Test1 (%i) passed:\n\tmin = %lf, max = %lf, avg = %lf\n", size, minTime, maxTime, avgTime);
+    printf("Test1 (%i) passed:\n\tmin = %lf, max = %lf, avg = %lf\n",
+    size, minTime, maxTime, avgTime);
     delete[] mas;
   }
   catch (...) {
@@ -44,7 +45,7 @@ void Test2() {
   for (int i = 0; i < EXP_TEST2_COUNT; i++) {
     long double x = rand();
     long double y = rand();
-    try{
+    try {
       MyDiv(x, y);
     }
     catch (MyException& ex) {
@@ -57,15 +58,19 @@ void Test2() {
 
 void Test3(A *b) {
   try {
-    if (dynamic_cast<B&>(*b).member()) printf("Class A\n");
-    else printf("Class B\n");
+    if (dynamic_cast<B&>(*b).member())
+      printf("Class A\n");
+    else
+      printf("Class B\n");
   }
   catch (...){
     char temp[MAX_LEN];
     char btype;
-    if (b->member()) btype = 'B';
-    else btype = 'A';
-    sprintf(temp, "Object b is '%c' type", btype);
+    if (b->member())
+      btype = 'B';
+    else
+      btype = 'A';
+    sprintf_s(temp, "Object b is '%c' type", btype);
     throw CastExcp(temp, 0);
   }
   printf("Test3 passed.\n");
@@ -73,10 +78,11 @@ void Test3(A *b) {
 
 double Sum(long double n) {
   if (n < 0) return 0.;
-  if (n == 0. || n == -0.) throw DivisionByZeroExcp("Error in sum function", NULL);
-  try { 
+  if (n == 0. || n == -0.)
+    throw DivisionByZeroExcp("Error in sum function", NULL);
+  try {
     return 1./n + Sum(n - 1);
-  } 
+  }
   catch (MyException &excp) {
     throw SumExcp("Error in sum function", new MyException(excp));
   }
@@ -88,7 +94,7 @@ double Test4(long double n) {
   }
   catch (MyException& excp) {
     char arg[MAX_LEN];
-    sprintf(arg, "Error in test 4, arg = %lf", n);
+    sprintf_s(arg, "Error in test 4, arg = %lf", n);
     throw SumExcp(arg, new MyException(excp));
   }
 }
