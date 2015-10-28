@@ -16,4 +16,4 @@ class B : public A {
   }
 };
 
-#endif  // SOLUTIONS_PETROVA_SRC_CLASSES_H
+#endif  // SOLUTIONS_PETROVA_SRC_CLASSES_H_

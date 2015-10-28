@@ -53,7 +53,7 @@ void Test2() {
         throw test2(st, new MyException(e));
     }
   }
-  printf("Test2 passed.\n"); 
+  printf("Test2 passed.\n");
 }
 
 void Test3(A *b) {
@@ -93,7 +93,7 @@ double Test4(long double n) {
     try {
          return Sum(n);
     }
-	catch (MyException &e) {
+    catch (MyException &e) {
         char *st = new char[100];
         sprintf_s(st, 100, "wrong arg %lf", n);
         throw test4(st, new MyException(e));
