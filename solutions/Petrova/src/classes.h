@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CLASSES_H
-#define CLASSES_H
+#ifndef SOLUTIONS_PETROVA_SRC_CLASSES_H
+#define SOLUTIONS_PETROVA_SRC_CLASSES_H
 
 class A {
  public:
@@ -16,4 +16,4 @@ class B : public A {
   }
 };
 
-#endif  // CLASSES_H
+#endif  // SOLUTIONS_PETROVA_SRC_CLASSES_H

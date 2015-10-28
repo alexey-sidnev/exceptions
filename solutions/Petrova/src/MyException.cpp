@@ -8,7 +8,7 @@ MyException :: MyException(char *str1, MyException *ex1) {
 MyException :: MyException(const MyException &EX) {
     if (EX.str != 0) {
         str = new char[strlen(EX.str)];
-        strcpy(str, EX.str);
+        strcpy_s(str, 100, EX.str);
     }
     if (EX.ex != 0)
         ex = new MyException(*(EX.ex));
