@@ -21,7 +21,7 @@ class Exception1 : public MyException {
  public:
   Exception1(char *str1, MyException *e1) : MyException(str1, e1)
   {}
-  Exception1(const MyException &E) :MyException( E)
+  explicit Exception1(const MyException &E) :MyException(E)
   {}
 };
 
@@ -29,7 +29,7 @@ class Exception2 : public MyException {
  public:
   Exception2(char *str1, MyException *e1) : MyException(str1, e1)
   {}
-  Exception2(const MyException &E) :MyException( E)
+  explicit Exception2(const MyException &E) :MyException(E)
   {}
 };
 
@@ -37,7 +37,7 @@ class Exception3 : public MyException {
  public:
   Exception3(char *str1, MyException *e1) : MyException(str1, e1)
   {}
-  Exception3(const MyException &E) :MyException( E)
+  explicit Exception3(const MyException &E) :MyException(E)
   {}
 };
 
@@ -45,7 +45,7 @@ class Exception4 : public MyException {
  public:
   Exception4(char *str1, MyException *e1) : MyException(str1, e1)
   {}
-  Exception4(const MyException &E) :MyException( E)
+  explicit Exception4(const MyException &E) :MyException(E)
   {}
 };
 

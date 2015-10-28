@@ -6,11 +6,13 @@ int CmpDouble(const void *arg1, const void *arg2) {
     arg2_as_double = *static_cast<const double *>(arg2);
   if (arg1_as_double - arg2_as_double < 0) {
     return -1;
-  } else
+  } else {
     if (arg1_as_double-arg2_as_double > 0) {
       return 1;
-    } else 
+    } else {
       return 0;
+      }
+    }
 }
 
 double Sort(double *mas, int size) {
