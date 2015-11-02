@@ -1,19 +1,17 @@
 #pragma once
-#ifndef CLASSES_H
-#define CLASSES_H
+#ifndef SOLUTIONS_CHAPYGIN_SRC_CLASSES_H_
+#define SOLUTIONS_CHAPYGIN_SRC_CLASSES_H_
 
-class A {
- public:
+class A { public:
   virtual bool member() {
     return false;
   }
 };
 
-class B : public A {
- public:
+class B : public A { public:
   bool member() {
     return true;
   }
 };
 
-#endif  // CLASSES_H
+#endif  // SOLUTIONS_CHAPYGIN_SRC_CLASSES_H_

@@ -1,26 +1,28 @@
 #include "MyException.h"
-#include <stdio.h>
-#include <string>
 
-MyException::MyException(char* _errorMessage, char* _errorPosition, MyException* _prevEx) {
-	strcpy(errorMessage, _errorMessage);
-	strcpy(errorPosition, _errorPosition);
-	prevEx = _prevEx;
+void MyException::WriteLog() {
+  if (prevEx != 0)  prevEx -> WriteLog();
+  printf("%s\n", errLog);
+}
+
+MyException::MyException(char* _errLog, MyException* _prevEx) {
+  errLog = _errLog;
+  prevEx = _prevEx;
 }
 
 MyException::MyException(const MyException& excp) {
-	strcpy(errorMessage, excp.errorMessage);
-	strcpy(errorPosition, excp.errorPosition);
-	if (prevEx != NULL) prevEx = new MyException(*(excp.prevEx));
+  if (excp.errLog != NULL) {
+    errLog = new char[strlen(excp.errLog)];
+    strcpy_s(errLog, MAX_LEN, excp.errLog);
+  }
+  if (excp.prevEx != NULL) {
+	prevEx = new MyException ( *(excp.prevEx));
+  }
+  else
+    prevEx = NULL;
 }
 
-MyException::~MyException(){
-	if (prevEx != NULL) {
-		delete prevEx; prevEx = NULL;
-	}
-}
-
-void MyException::WriteLog() {
-	if (prevEx != NULL) prevEx->WriteLog();
-	printf("--Error Type: %s; \n--Error Position: %s;\n", errorMessage, errorPosition);
+MyException::~MyException() {
+  if (prevEx != NULL)  delete prevEx;
+  delete[] errLog;
 }
