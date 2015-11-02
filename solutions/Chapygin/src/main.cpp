@@ -12,6 +12,7 @@ int main() {
     A a;
     B b;
     srand(666);
+
     for (int i = 0; i < TESTS_COUNT; i++) {
       int size = 0;
       unsigned char *size_as_uchar_array = (unsigned char *)&size;
